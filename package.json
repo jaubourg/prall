@@ -2,7 +2,7 @@
     "author": "Julian Aubourg <j@ubourg.net> (http://jaubourg.net)",
     "description": "thenable functions with built-in currying and callback-based API adaptation",
     "devDependencies": {
-        "eslint": "3.18.0",
+        "eslint": "3.19.0",
         "eslint-config-creative-area": "0.6.0",
         "nodeunit": "0.11.0"
     },
