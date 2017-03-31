@@ -1,5 +1,7 @@
 "use strict";
 
+const globalPrall = require( `../..` );
+
 module.exports = require( `../both` )( {
     "bind, on & with return a new instance": prall => assert => {
         assert.expect( 3 );
@@ -16,7 +18,7 @@ module.exports = require( `../both` )( {
         const on3 = plus10.bind( 3 );
         const base64 = base.with( 14, 20, 30 );
         const base32 = base64.on( -32 );
-        const eleven = prall( base32, -21 );
+        const eleven = globalPrall( base32, -21 );
         Promise.all( [
             base.then( result => assert.strictEqual( result, 0 ) ),
             plus10.then( result => assert.strictEqual( result, 10 ) ),
@@ -43,11 +45,9 @@ module.exports = require( `../both` )( {
     callback( null, result );
 } );
 
-const { adapt } = require( `../..` );
-
 module.exports[ `filter returns a new instance` ] = assert => {
     assert.expect( 1 );
-    const instance = adapt( `` );
+    const instance = globalPrall.adapt( `` );
     assert.notStrictEqual( instance.filter( () => null ), instance );
     assert.done();
 };

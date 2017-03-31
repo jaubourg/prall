@@ -170,13 +170,17 @@ const createPrall = ( method, args, adapt ) => {
     if ( ( type !== `function` ) && ( type !== `string` ) ) {
         throw new Error( `function or string expected, ${ type } provided` );
     }
-    return method instanceof Prall ?
-        method.with( ...args ) :
-        new Prall( new Data( {
-            adapt,
-            args,
-            method,
-        } ) );
+    if ( method instanceof Prall ) {
+        if ( adapt ) {
+            throw new Error( `prall instances cannot be adapted` );
+        }
+        return method.with( ...args );
+    }
+    return new Prall( new Data( {
+        adapt,
+        args,
+        method,
+    } ) );
 };
 
 const ident = ( ...x ) => x;
