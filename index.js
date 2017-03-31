@@ -135,7 +135,7 @@ class Prall extends ExtensibleFunction {
     filter( adapt ) {
         const data = dataMap.get( this );
         if ( !data.adapt ) {
-            throw new Error( `cannot filter non-adapted prall instance` );
+            throw new Error( `cannot filter non-adapted prall instances` );
         }
         const type = typeof adapt;
         if ( type !== `function` ) {
