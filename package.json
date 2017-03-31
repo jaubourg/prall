@@ -23,7 +23,7 @@
         "url" : "http://github.com/jaubourg/prall.git"
     },
     "scripts": {
-        "test": "node_modules/.bin/nodeunit test/units"
+        "test": "node test"
     },
     "version": "0.2.0-pre"
 }
