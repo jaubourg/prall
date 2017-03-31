@@ -25,5 +25,5 @@
     "scripts": {
         "test": "node_modules/.bin/nodeunit test/units"
     },
-    "version": "0.1.1-pre"
+    "version": "0.2.0-pre"
 }
