@@ -1,7 +1,7 @@
 "use strict";
 
 const Data = require( `./lib/Data` );
-const placeholder = require( `./lib/placeholder` );
+const { placeHolder } = require( `./lib/Args` );
 const Prall = require( `./lib/Prall` );
 
 const createPrall = ( method, args, adapt ) => {
@@ -26,9 +26,8 @@ const ident = ( ...x ) => x;
 
 const prall = ( method, ...args ) => createPrall( method, args );
 prall.adapt = ( method, ...args ) => createPrall( method, args, ident );
-prall._ = placeholder;
+prall._ = placeHolder;
 
 Object.freeze( prall );
-Object.freeze( placeholder );
 
 module.exports = prall;
