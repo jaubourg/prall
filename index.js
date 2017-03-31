@@ -11,7 +11,7 @@ const concat = ( array1, array2, toFill ) => {
     for ( let index1 = 0; index1 < array1.length; index1++ ) {
         let item = array1[ index1 ];
         if ( item === placeholder ) {
-            if ( !array2 || ( index2 < array2.length ) ) {
+            if ( array2 && ( index2 < array2.length ) ) {
                 if ( !output ) {
                     output = array1.slice( 0, index1 );
                 }
