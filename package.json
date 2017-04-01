@@ -2,6 +2,7 @@
     "author": "Julian Aubourg <j@ubourg.net> (http://jaubourg.net)",
     "description": "thenable functions with built-in currying and callback-based API adaptation",
     "devDependencies": {
+        "coveralls": "2.13.0",
         "eslint": "3.19.0",
         "eslint-config-creative-area": "0.6.0",
         "istanbul": "0.4.5",
@@ -24,7 +25,8 @@
         "url" : "http://github.com/jaubourg/prall.git"
     },
     "scripts": {
-        "cover": "istanbul cover test",
+        "cover": "istanbul cover test/tasks/test.js",
+        "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
         "test": "node test"
     },
     "version": "0.2.0-pre"
