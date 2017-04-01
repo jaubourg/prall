@@ -72,6 +72,17 @@ module.exports = require( `../both` )( {
             .catch( error => assert.strictEqual( error.message, `missing arguments` ) )
             .then( () => assert.done() );
     },
+    "adding placeholders in placeholders": ( prall, concat ) => assert => {
+        assert.expect( 1 );
+        prall( concat, _, _, _ )
+            .with( _, `b` )
+            .with( `a`, `c`, _, `e` )( `d` )
+            .then(
+                string => assert.strictEqual( string, `abcde` ),
+                () => null
+            )
+            .then( () => assert.done() );
+    },
 }, ( ...args ) => {
     let result = ``;
     for ( const string of args ) {

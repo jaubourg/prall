@@ -16,4 +16,18 @@ module.exports = require( `../both` )( {
         prall( () => assert.ok( true ) )();
         assert.done();
     },
+    "refuse non function": prall => assert => {
+        assert.expect( 1 );
+        assert.throws( () => prall( true ) );
+        assert.done();
+    },
 } );
+
+const { adapt } = require( `../..` );
+
+module.exports[ `cannot be adapted` ] = assert => {
+    assert.expect( 1 );
+    const instance = adapt( `` );
+    assert.throws( () => adapt( instance ) );
+    assert.done();
+};

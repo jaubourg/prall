@@ -47,4 +47,21 @@ module.exports = {
             filtered( success ).then( flag => assert.ok( flag ), () => null ),
         ] ).then( () => assert.done() );
     },
+    "same filter = same instance": assert => {
+        assert.expect( 1 );
+        const filter = () => null;
+        const instance = prall.adapt( `` ).filter( filter );
+        assert.strictEqual( instance.filter( filter ), instance );
+        assert.done();
+    },
+    "filter that throws": assert => {
+        assert.expect( 1 );
+        const error = {};
+        const filter = () => {
+            throw error;
+        };
+        prall.adapt( callback => callback() ).filter( filter )
+            .catch( e => assert.strictEqual( e, error ) )
+            .then( () => assert.done() );
+    },
 };

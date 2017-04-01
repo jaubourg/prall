@@ -81,6 +81,12 @@ module.exports = require( `../both` )( {
             )
             .then( () => assert.done() );
     },
+    "no new args = same instance": prall => assert => {
+        assert.expect( 1 );
+        const instance = prall( `` );
+        assert.strictEqual( instance.with(), instance );
+        assert.done();
+    },
 }, ( ...args ) => {
     let result = 0;
     for ( const number of args ) {
