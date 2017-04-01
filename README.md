@@ -6,6 +6,7 @@
 
 [![Build Status][travis-image]][travis-url]
 [![Coverage Status][coveralls-image]][coveralls-url]
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
 ## License
 
@@ -18,6 +19,8 @@ Licensed under the [MIT license](https://raw.githubusercontent.com/jaubourg/pral
 [dependency-url]: https://david-dm.org/jaubourg/prall
 [devDependency-image]: https://img.shields.io/david/dev/jaubourg/prall.svg?style=flat-square
 [devDependency-url]: https://david-dm.org/jaubourg/prall?type=dev
+[greenkeeper-image]: https://badges.greenkeeper.io/jaubourg/prall.svg
+[greenkeeper-url]: https://greenkeeper.io/
 [npm-image]: https://img.shields.io/npm/v/prall.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/prall
 [travis-image]: https://img.shields.io/travis/jaubourg/prall.svg?style=flat-square
