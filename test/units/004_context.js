@@ -96,4 +96,14 @@ module.exports = require( `../both` )( {
         prall( `method` ).bind( context ).call( {} );
         assert.done();
     },
+    "method name with no context": prall => assert => {
+        assert.expect( 1 );
+        prall( `method` ).catch( () => assert.ok( true ) ).then( () => assert.done() );
+    },
+    "method is not a function": prall => assert => {
+        assert.expect( 1 );
+        prall( `method` ).on( {
+            "method": `some string`,
+        } ).catch( () => assert.ok( true ) ).then( () => assert.done() );
+    },
 } );
