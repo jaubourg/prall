@@ -2,7 +2,6 @@
 
 [![NPM][npm-image]][npm-url]
 [![License][license-image]][license-url]
-
 [![Dependency Status][dependency-image]][dependency-url]
 [![devDependency Status][devDependency-image]][devDependency-url]
 
