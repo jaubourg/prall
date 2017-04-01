@@ -1,6 +1,8 @@
 # prall
 
 [![NPM][npm-image]][npm-url]
+[![License][license-image]][license-url]
+
 [![Dependency Status][dependency-image]][dependency-url]
 [![devDependency Status][devDependency-image]][devDependency-url]
 
@@ -11,7 +13,7 @@
 ## License
 
 Copyright (c) 2017 [Julian Aubourg](mailto:j@ubourg.net)
-Licensed under the [MIT license](https://raw.githubusercontent.com/jaubourg/prall/master/LICENSE).
+Licensed under the [MIT license][license-url].
 
 [coveralls-image]: https://img.shields.io/coveralls/jaubourg/prall.svg?style=flat-square
 [coveralls-url]: https://coveralls.io/github/jaubourg/prall
@@ -21,6 +23,8 @@ Licensed under the [MIT license](https://raw.githubusercontent.com/jaubourg/pral
 [devDependency-url]: https://david-dm.org/jaubourg/prall?type=dev
 [greenkeeper-image]: https://badges.greenkeeper.io/jaubourg/prall.svg
 [greenkeeper-url]: https://greenkeeper.io/
+[license-image]: https://img.shields.io/npm/l/prall.svg
+[license-url]: https://raw.githubusercontent.com/jaubourg/prall/master/LICENSE
 [npm-image]: https://img.shields.io/npm/v/prall.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/prall
 [travis-image]: https://img.shields.io/travis/jaubourg/prall.svg?style=flat-square
