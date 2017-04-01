@@ -1,17 +1,17 @@
 "use strict";
 
-const prall = require( `../..` );
+const { adapt, prall } = require( `../..` );
 
 module.exports = {
     "must be adapted to accept filter": assert => {
         assert.expect( 1 );
-        prall.adapt( `` ).filter( () => null );
+        adapt( `` ).filter( () => null );
         assert.throws( () => prall( `` ).filter( () => null ) );
         assert.done();
     },
     "filter must be a function": assert => {
         assert.expect( 7 );
-        const instance = prall.adapt( `` );
+        const instance = adapt( `` );
         assert.throws( () => instance.filter() );
         assert.throws( () => instance.filter( `a string` ) );
         assert.throws( () => instance.filter( null ) );
@@ -24,15 +24,15 @@ module.exports = {
     "default behaviour without filter": assert => {
         assert.expect( 2 );
         Promise.all( [
-            prall.adapt( callback => callback( true ) )
+            adapt( callback => callback( true ) )
                 .catch( flag => assert.ok( flag ) ),
-            prall.adapt( callback => callback( null, true ) )
+            adapt( callback => callback( null, true ) )
                 .then( flag => assert.ok( flag ), () => null ),
         ] ).then( () => assert.done() );
     },
     "filter": assert => {
         assert.expect( 4 );
-        const instance = prall.adapt( ( object, callback ) => callback( object ) );
+        const instance = adapt( ( object, callback ) => callback( object ) );
         const filtered = instance.filter( ( { fail, pass } ) => [ fail, pass ] );
         const error = {
             "fail": true,
@@ -50,7 +50,7 @@ module.exports = {
     "same filter = same instance": assert => {
         assert.expect( 1 );
         const filter = () => null;
-        const instance = prall.adapt( `` ).filter( filter );
+        const instance = adapt( `` ).filter( filter );
         assert.strictEqual( instance.filter( filter ), instance );
         assert.done();
     },
@@ -60,7 +60,7 @@ module.exports = {
         const filter = () => {
             throw error;
         };
-        prall.adapt( callback => callback() ).filter( filter )
+        adapt( callback => callback() ).filter( filter )
             .catch( e => assert.strictEqual( e, error ) )
             .then( () => assert.done() );
     },
