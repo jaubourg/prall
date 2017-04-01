@@ -23,7 +23,7 @@ Licensed under the [MIT license][license-url].
 [devDependency-url]: https://david-dm.org/jaubourg/prall?type=dev
 [greenkeeper-image]: https://badges.greenkeeper.io/jaubourg/prall.svg
 [greenkeeper-url]: https://greenkeeper.io/
-[license-image]: https://img.shields.io/npm/l/prall.svg
+[license-image]: https://img.shields.io/npm/l/prall.svg?style=flat-square
 [license-url]: https://raw.githubusercontent.com/jaubourg/prall/master/LICENSE
 [npm-image]: https://img.shields.io/npm/v/prall.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/prall
