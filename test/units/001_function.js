@@ -1,8 +1,5 @@
 "use strict";
 
-const globalPrall = require( `../..` );
-const { adapt } = globalPrall;
-
 module.exports = require( `../both` )( {
     "typeof": prall => assert => {
         assert.expect( 1 );
@@ -27,10 +24,12 @@ module.exports = require( `../both` )( {
     "prall cannot be adapted": prall => assert => {
         assert.expect( 1 );
         const instance = prall( `` );
-        assert.throws( () => adapt( instance ) );
+        assert.throws( () => prall.adapt( instance ) );
         assert.done();
     },
 } );
+
+const globalPrall = require( `../..` );
 
 module.exports[ `prall of prall` ] = assert => {
     assert.expect( 1 );
