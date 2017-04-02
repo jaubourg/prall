@@ -1,6 +1,6 @@
 "use strict";
 
-const { _ } = require( `../..` );
+const { _, Placeholder } = require( `../..` );
 
 module.exports = require( `../both` )( {
     "1st of 3": ( prall, concat ) => assert => {
@@ -66,10 +66,10 @@ module.exports = require( `../both` )( {
             )
             .then( () => assert.done() );
     },
-    "missing arguments": ( prall, concat ) => assert => {
+    "missing argument": ( prall, concat ) => assert => {
         assert.expect( 1 );
         prall( concat, `a` ).with( _, `c` )()
-            .catch( error => assert.strictEqual( error.message, `missing arguments` ) )
+            .catch( error => assert.strictEqual( error.message, `missing argument` ) )
             .then( () => assert.done() );
     },
     "adding placeholders in placeholders": ( prall, concat ) => assert => {
@@ -79,6 +79,24 @@ module.exports = require( `../both` )( {
             .with( `a`, `c`, _, `e` )( `d` )
             .then(
                 string => assert.strictEqual( string, `abcde` ),
+                () => null
+            )
+            .then( () => assert.done() );
+    },
+    "placeholder with default": ( prall, concat ) => assert => {
+        assert.expect( 1 );
+        prall( concat, new Placeholder( `a` ), `b` )
+            .then(
+                string => assert.strictEqual( string, `ab` ),
+                () => null
+            )
+            .then( () => assert.done() );
+    },
+    "placeholder replace with default": ( prall, concat ) => assert => {
+        assert.expect( 1 );
+        prall( concat, _, `b` ).with( new Placeholder( `a` ) )
+            .then(
+                string => assert.strictEqual( string, `ab` ),
                 () => null
             )
             .then( () => assert.done() );
