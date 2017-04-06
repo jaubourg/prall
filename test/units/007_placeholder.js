@@ -101,17 +101,9 @@ module.exports = require( `../both` )( {
             )
             .then( () => assert.done() );
     },
-}, ( ...args ) => {
-    let result = ``;
-    for ( const string of args ) {
-        result += string;
-    }
-    return result;
-}, ( ...args ) => {
+},
+( ...args ) => args.join( `` ),
+( ...args ) => {
     const callback = args.pop();
-    let result = ``;
-    for ( const string of args ) {
-        result += string;
-    }
-    callback( null, result );
+    callback( null, args.join( `` ) );
 } );

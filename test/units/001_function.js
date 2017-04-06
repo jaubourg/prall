@@ -39,18 +39,10 @@ module.exports = require( `../both` )( {
             .then( () => assert.done() );
     },
 }, function( ...args ) {
-    // eslint-disable-next-line
-    let result = this;
-    for ( const number of args ) {
-        result += number;
-    }
-    return result;
+    // eslint-disable-next-line no-invalid-this
+    return args.reduce( ( sum, number ) => sum + number, this );
 }, function( ...args ) {
     const callback = args.pop();
-    // eslint-disable-next-line
-    let result = this;
-    for ( const number of args ) {
-        result += number;
-    }
-    callback( null, result );
+    // eslint-disable-next-line no-invalid-this
+    callback( null, args.reduce( ( sum, number ) => sum + number, this ) );
 } );

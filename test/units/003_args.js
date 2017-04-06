@@ -87,17 +87,9 @@ module.exports = require( `../both` )( {
         assert.strictEqual( instance.with(), instance );
         assert.done();
     },
-}, ( ...args ) => {
-    let result = 0;
-    for ( const number of args ) {
-        result += number;
-    }
-    return result;
-}, ( ...args ) => {
+},
+( ...args ) => args.reduce( ( sum, number ) => sum + number ),
+( ...args ) => {
     const callback = args.pop();
-    let result = 0;
-    for ( const number of args ) {
-        result += number;
-    }
-    callback( null, result );
+    callback( null, args.reduce( ( sum, number ) => sum + number ) );
 } );
