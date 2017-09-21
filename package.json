@@ -3,7 +3,7 @@
     "description": "thenable functions with built-in currying and callback-based API adaptation",
     "devDependencies": {
         "coveralls": "2.13.1",
-        "eslint": "4.7.1",
+        "eslint": "4.7.2",
         "eslint-config-creative-area": "0.7.0",
         "istanbul": "0.4.5",
         "nodeunit": "0.11.1"
