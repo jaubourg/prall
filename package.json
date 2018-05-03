@@ -6,7 +6,7 @@
         "eslint": "4.19.1",
         "eslint-config-creative-area": "0.8.0",
         "istanbul": "0.4.5",
-        "nodeunit": "0.11.1"
+        "nodeunit": "0.11.2"
     },
     "engines": {
         "node" : ">=6"
