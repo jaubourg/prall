@@ -4,7 +4,7 @@
     "devDependencies": {
         "coveralls": "3.0.0",
         "eslint": "5.13.0",
-        "eslint-config-creative-area": "0.8.0",
+        "eslint-config-creative-area": "0.9.0",
         "istanbul": "0.4.5",
         "nodeunit": "0.11.3"
     },
